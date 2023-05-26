@@ -1,4 +1,5 @@
 import { Bar, Line } from "react-chartjs-2";
+import Storage from "./Storage";
 
 const labels = ["Januari", "Februari", "Maret", "April", "Mei", "Juni"];
 const data = {
@@ -16,6 +17,7 @@ const data = {
 const App = () => {
   return (
     <div>
+      <Storage />
       <Line data={data} />
       <Bar
         style={{ width: 1000 }}

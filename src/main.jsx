@@ -1,13 +1,13 @@
-import React from "react";
+import { Chart, registerables } from "chart.js";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { Chart, registerables } from "chart.js";
+import { CookiesProvider } from "react-cookie";
 
 Chart.register(...registerables);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <CookiesProvider>
     <App />
-  </React.StrictMode>
+  </CookiesProvider>
 );
