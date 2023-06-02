@@ -9,10 +9,14 @@ const data = [
 // document.cookie = "username=John Doe";
 
 const Storage = () => {
-  const [cookies, setCookies] = useCookies(["username"]);
+  const [cookies, setCookies, removeCookies] = useCookies(["username"]);
 
   const onClickCookie = () => {
     setCookies("username", "John Wick");
+  };
+
+  const onClickRemoveCookie = () => {
+    removeCookies("username");
   };
 
   const onClickLocal = () => {
@@ -49,6 +53,7 @@ const Storage = () => {
       </button>
       <div>{cookies.username}</div>
       <button onClick={onClickCookie}>add cookie name</button>
+      <button onClick={onClickRemoveCookie}>remove cookies</button>
     </div>
   );
 };
